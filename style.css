@@ -1,0 +1,49 @@
+#game_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #9e9a9a;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#cards_container{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.card{
+    width: 50px;
+    height: 72.6px;
+    background-color: transparent;
+    perspective: 1000px;
+}
+.card_inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition:transform 0.3s;
+    /* allow card to show the back side */
+    transform-style: preserve-3d;
+}
+.card_image{
+    width: 50px;
+}
+.card.flipped .card_inner{
+    transform: rotateY(180deg);
+}
+.card_front, .card_back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card_back{
+  transform: rotateY(180deg);
+}
