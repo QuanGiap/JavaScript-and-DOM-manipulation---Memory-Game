@@ -18,7 +18,7 @@ const start_button = document.getElementById('start_button');
 const time_display = document.getElementById('time');
 const total_move_display = document.getElementById('total_moves');
 const total_time_display = document.getElementById('total_time');
-//using anonymous function
+//create anonymous function
 //and use as callback functions
 game_level.addEventListener('change',()=>{start_button.innerText='Restart to apply effect'})
 card_style.addEventListener('change',()=>{start_button.innerText='Restart to apply effect'})
@@ -69,18 +69,15 @@ function addEffectCardIncorrect(card){
 function createCard(index_card){
     const card = document.createElement('div');
     card.className = 'card';
-    // ES6 feature: Template Literals
     card.innerHTML = `
-        <div class="card" data-value="${index_card}" data-matched="false">
-                <div class="card_inner">
-                    <div class="card_front">
-                        <img src="images/${card_style.value}/card_back.jpg" alt="2" class="card_image" />
-                    </div>
-                    <div class="card_back">
-                        <img src="images/${card_style.value}/${index_card}.png" alt="1" class="card_image" />
-                    </div>
-                </div>
+        <div class="card_inner">
+            <div class="card_front">
+                <img src="images/${card_style.value}/card_back.jpg" alt="2" class="card_image" />
             </div>
+            <div class="card_back">
+                <img src="images/${card_style.value}/${index_card}.png" alt="1" class="card_image" />
+            </div>
+        </div>
     `;
     card.dataset.value = index_card;
     card.dataset.matched = false;
