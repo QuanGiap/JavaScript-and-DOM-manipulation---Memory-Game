@@ -94,6 +94,9 @@ label{
     background-color: red;
     animation: showing-out 0.5s 0.3s linear alternate-reverse;
 }
+.card_img_correct.no_animation{
+    animation: showing-out 0s forwards;
+}
 .card.flipped .card_inner{
     transform: rotateY(180deg);
 }
